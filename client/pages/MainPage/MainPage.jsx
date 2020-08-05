@@ -15,7 +15,6 @@ const MainPage = () => {
         }
         fetchData()
     }, [])
-    console.log(sources)
     return (
         <>
         {isLoading ? (

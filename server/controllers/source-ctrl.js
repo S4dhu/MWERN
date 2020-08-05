@@ -1,6 +1,6 @@
 const Source = require('../models/source-model')
 
-createSource = (req, res) => {
+const createSource = (req, res) => {
     const body = req.body
 
     if (!body) {
@@ -13,7 +13,7 @@ createSource = (req, res) => {
     const source = new Source(body)
 
     if (!source) {
-        return res.status(400).json({ success: false, error: err })
+        return res.status(400).json({ success: false, error: res })
     }
 
     source
@@ -33,7 +33,7 @@ createSource = (req, res) => {
         })
 }
 
-updateSource = async (req, res) => {
+const updateSource = async (req, res) => {
     const body = req.body
 
     if (!body) {
@@ -71,7 +71,7 @@ updateSource = async (req, res) => {
     })
 }
 
-deleteSource = async (req, res) => {
+const deleteSource = async (req, res) => {
     await Source.findOneAndDelete({ _id: req.params.id }, (err, source) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
@@ -87,7 +87,7 @@ deleteSource = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
-getSourceById = async (req, res) => {
+const getSourceById = async (req, res) => {
     await Source.findOne({ _id: req.params.id }, (err, source) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
@@ -102,7 +102,7 @@ getSourceById = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
-getSources = async (req, res) => {
+const getSources = async (req, res) => {
     await Source.find({}, (err, sources) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
