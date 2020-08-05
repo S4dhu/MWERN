@@ -1,19 +1,20 @@
 # MWERN
 Mongo + Webpack + Express + React + NodeJS
 
-For start express server:
-### `yarn start`
-or
-### `npm run start`
+## Installation
 
+    yarn install
 
-For start client + server:
-### `yarn dev`
-or
-### `npm run dev`
+## Create a Development build
 
+    yarn dev
 
-For build production:
-### `yarn build`
-or
-### `npm run build`
+## Create a Production build
+
+    yarn prod
+
+## Run the code on a local webserver
+
+    yarn start
+
+Then navigate to `http://localhost:3000`
