@@ -13,7 +13,7 @@ or
 ### `npm run dev`
 
 
-For build production
+For build production:
 ### `yarn build`
 or
 ### `npm run build`
