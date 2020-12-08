@@ -4,29 +4,17 @@ import api from '../../api'
 import './MainPage.scss';
 
 const MainPage = () => {
-    const [sources, setSources] = useState([])
-    const [isLoading, setLoading] = useState(false)
+    const [value, setValue] = useState('')
     useEffect(() => {
         async function fetchData() {
-            await api.getAllSources().then(sources => {
-                setSources(sources.data.data)
-                setLoading(false)
+            await api.test().then(value => {
+                setValue(value.data.data)
             })
         }
         fetchData()
     }, [])
     return (
-        <>
-        {isLoading ? (
-            <div>
-                Loading...
-            </div>
-        ) : (
-            <div className="wrapper">{sources.map(s => {
-                return <div key={s._id}>{s.name}</div>
-            })}</div>
-        )}
-        </>
+        <div>{value}</div>
     )
 }
 

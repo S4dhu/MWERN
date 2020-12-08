@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
 
+const databaseUrl = 'mongodb://127.0.0.1:27017/test'
+
 mongoose
-    .connect('mongodb://127.0.0.1:27017/sources', { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(databaseUrl, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(e => {
         console.error('Connection error', e.message)
     })
